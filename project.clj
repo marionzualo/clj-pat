@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [se.haleby/stub-http "0.2.0"]
                  [cheshire "5.6.1"]
-                 [clj-http "2.1.0"]])
+                 [clj-http "2.1.0"]
+                 [clj-http-fake "1.0.2"]])
