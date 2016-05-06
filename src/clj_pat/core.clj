@@ -4,7 +4,7 @@
   (:use [slingshot.slingshot :only [try+]]))
 
 (defn get-body [response]
-  (json/parse-string (:body response)))
+  (json/parse-string (:body response) true))
 
 (defn get-data [url]
   (try+
@@ -12,7 +12,7 @@
       (get-body response))
     (catch Object _
       (let [body (get-body (:object &throw-context))]
-        {:error {:status (get body "code") :message (get body "error")}}))))
+        {:error {:status (:code body) :message (:error body)}}))))
 
 (defn postcode [code]
   (let [parsed-code (clojure.string/replace code " " "")
