@@ -1,11 +1,11 @@
 # clj-pat
 
-clj-pat is a small library for getting information about, postcodes in the UK. At its core, the postcode data is
+clj-pat is a small library for getting information about postcodes in the UK. At its core, the postcode data is
 provided by the [Ordnance Survey OS OpenData](http://www.ordnancesurvey.co.uk/oswebsite/products/os-opendata.html)
 initiative, but this library is actually a thin wrapper for a [web-service](http://www.uk-postcodes.com/) provided by
 [Stuart Harrison](http://twitter.com/pezholio).
 
-This was inspired by the [Python Client](https://postcodes.readthedocs.org/en/latest/) by
+This was also inspired by the [Python Client](https://postcodes.readthedocs.org/en/latest/) for the same web-service by
 [Edd Robinson](http://about.me/eddrobinson).
 
 ## Usage
@@ -25,11 +25,19 @@ $ (clj-pat.core/get-nearest-postcode 51.5054914 -0.0929278)
 Return data for postcodes within x distance (miles) of a postcode
 ```clojure
 $ (clj-pat.core/get-postcodes-within-distance 1 "SE19HR")
+; out not shown because it is very long
 ```
 
 Return data for postcodes within x distance (miles) of a lat/lng
 ```clojure
->>>> (clj-pat.core/get-postcodes-within-distance 1 51.5054914 -0.0929278)
+$ (clj-pat.core/get-postcodes-within-distance 1 51.5054914 -0.0929278)
+; out not shown because it is very long
+```
+
+Return data for postcodes within x distance (miles) of a lat/lng
+```clojure
+$ (clj-pat.core/get-postcodes-within-distance 1 51.5054914 -0.0929278)
+; out not shown because it is very long
 ```
 
 ## License
