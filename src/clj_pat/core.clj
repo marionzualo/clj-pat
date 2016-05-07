@@ -14,7 +14,11 @@
       (let [body (get-body (:object &throw-context))]
         {:error {:status (:code body) :message (:error body)}}))))
 
+(def base-url "http://uk-postcodes.com/")
+
+(defn postcode-url [postcode]
+  (let [code (clojure.string/replace postcode " " "")]
+    (str base-url "postcode/" code ".json")))
+
 (defn postcode [code]
-  (let [parsed-code (clojure.string/replace code " " "")
-        url (str "http://uk-postcodes.com/postcode/" parsed-code ".json")]
-    (get-data url)))
+  (get-data (postcode-url code)))
