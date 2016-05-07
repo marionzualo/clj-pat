@@ -22,3 +22,9 @@
 
 (defn postcode [code]
   (get-data (postcode-url code)))
+
+(defn nearest-postcode-url [lat lng]
+  (str base-url "latlng/" lat "," lng ".json"))
+
+(defn get-nearest-postcode [lat lng]
+  (get-data (nearest-postcode-url lat lng)))
