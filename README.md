@@ -12,14 +12,24 @@ This was inspired by the [Python Client](https://postcodes.readthedocs.org/en/la
 
 Return data for a postcode
 ```clojure
->>>> (clj-pat.core/postcode "IP12 4JR")
+$ (clj-pat.core/postcode "IP12 4JR")
 {"postcode" "IP12 4JR", "geo" {"lat" 52.096880109249916, "lng" 1.3037915126824386, "easting" 626389.0, "northing" 249432.0, "geohash" "http://geohash.org/u12bmevqkd36"}, "administrative" {"council" {"title" "Suffolk Coastal", "uri" "http://statistics.data.gov.uk/id/statistical-geography/E07000205", "code" "E07000205"}, "county" {"title" "Suffolk", "uri" "http://statistics.data.gov.uk/id/statistical-geography/E10000029", "code" "E10000029"}, "ward" {"title" "Farlingaye", "uri" "http://statistics.data.gov.uk/id/statistical-geography/E05007196", "code" "E05007196"}, "constituency" {"title" "Suffolk Coastal", "uri" "http://statistics.data.gov.uk/id/statistical-geography/E14000981", "code" "E14000981"}, "parish" {"title" "Woodbridge", "uri" "http://statistics.data.gov.uk/id/statistical-geography/E04009480", "code" "E04009480"}, "electoral_district" {"title" "Woodbridge", "uri" "http://data.ordnancesurvey.co.uk/id/7000000000015224", "code" "7000000000015224"}}}
 ```
 
 Return data for the nearest postcode to a point
 ```clojure
->>> (clj-pat.core/get-nearest-postcode 51.5054914 -0.0929278)
+$ (clj-pat.core/get-nearest-postcode 51.5054914 -0.0929278)
 {:postcode "SE1 9HR", :geo {:lat 51.50511048146166, :lng -0.09288950719200631, :easting 532457.0, :northing 180188.0, :geohash "http://geohash.org/gcpvjbhr582x"}, :administrative {:council {:title "Southwark", :uri "http://statistics.data.gov.uk/id/statistical-geography/E09000028", :code "E09000028"}, :ward {:title "Cathedrals", :uri "http://statistics.data.gov.uk/id/statistical-geography/E05000536", :code "E05000536"}, :constituency {:title "Bermondsey and Old Southwark", :uri "http://statistics.data.gov.uk/id/statistical-geography/E14000553", :code "E14000553"}}}
+```
+
+Return data for postcodes within x distance (miles) of a postcode
+```clojure
+$ (clj-pat.core/get-postcodes-within-distance 1 "SE19HR")
+```
+
+Return data for postcodes within x distance (miles) of a lat/lng
+```clojure
+>>>> (clj-pat.core/get-postcodes-within-distance 1 51.5054914 -0.0929278)
 ```
 
 ## License
