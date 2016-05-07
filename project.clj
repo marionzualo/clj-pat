@@ -1,6 +1,6 @@
-(defproject clj-pat "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject clj-pat "1.0.0"
+  :description "small library for getting information about, postcodes in the UK"
+  :url "https://github.com/marionzualo/clj-pat"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
