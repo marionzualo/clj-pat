@@ -20,11 +20,16 @@
   (let [code (clojure.string/replace postcode " " "")]
     (str base-url "postcode/" code ".json")))
 
-(defn postcode [code]
-  (get-data (postcode-url code)))
-
 (defn nearest-postcode-url [lat lng]
   (str base-url "latlng/" lat "," lng ".json"))
 
+
+;; Public API
+
+; Return data for a postcode
+(defn postcode [code]
+  (get-data (postcode-url code)))
+
+; Return data for the nearest postcode to a point
 (defn get-nearest-postcode [lat lng]
   (get-data (nearest-postcode-url lat lng)))
